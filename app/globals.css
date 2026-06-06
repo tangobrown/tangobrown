@@ -222,7 +222,51 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   display: grid; place-items: center; color: var(--coral-deep);
   background: var(--coral-tint); border: 1px solid color-mix(in oklch, var(--coral) 20%, transparent);
 }
-.benefit__icon svg { width: 26px; height: 26px; }
+.benefit__icon svg { width: 26px; height: 26px; overflow: visible; }
+
+/* --- Benefit icons: draw-on / burst-in when card enters viewport --- */
+/* Stroked icons (cards 1 & 2): paths invisible until in view */
+.benefit__icon svg circle,
+.benefit__icon svg path[stroke] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.benefit.is-in .benefit__icon svg circle,
+.benefit.is-in .benefit__icon svg path[stroke] {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.95s cubic-bezier(0.5, 0, 0.2, 1) 0.15s;
+}
+/* Stagger the second stroke (arrowhead / second circle) so it draws after the first */
+.benefit.is-in .benefit__icon svg circle:nth-of-type(2),
+.benefit.is-in .benefit__icon svg path[stroke]:nth-of-type(2) {
+  transition-delay: 0.55s;
+}
+
+/* Filled icons (card 3 sparkle): scale-and-fade burst */
+.benefit__icon svg path[fill] {
+  opacity: 0;
+  transform: scale(0.3) rotate(-30deg);
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+.benefit.is-in .benefit__icon svg path[fill] {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+  transition:
+    opacity 0.4s ease 0.2s,
+    transform 0.8s cubic-bezier(0.3, 1.5, 0.5, 1) 0.2s;
+}
+.benefit.is-in .benefit__icon svg path[fill]:nth-of-type(2) {
+  transition-delay: 0.55s, 0.55s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .benefit__icon svg circle,
+  .benefit__icon svg path[stroke],
+  .benefit__icon svg path[fill] {
+    stroke-dashoffset: 0; opacity: 1; transform: none; transition: none;
+  }
+}
 .benefit h3 { font-size: 1.22rem; margin-bottom: 9px; letter-spacing: -0.02em; }
 .benefit p { color: var(--ink-soft); font-size: 0.99rem; }
 

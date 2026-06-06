@@ -17,8 +17,8 @@ export default function Benefits() {
           <li className="benefit reveal">
             <span className="benefit__icon">
               <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <circle cx="19" cy="24" r="11" stroke="currentColor" strokeWidth="3" />
-                <circle cx="29" cy="24" r="11" stroke="currentColor" strokeWidth="3" />
+                <circle cx="19" cy="24" r="11" stroke="currentColor" strokeWidth="3" pathLength="1" />
+                <circle cx="29" cy="24" r="11" stroke="currentColor" strokeWidth="3" pathLength="1" />
               </svg>
             </span>
             <h3>True partnership</h3>
@@ -36,6 +36,7 @@ export default function Benefits() {
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  pathLength="1"
                 />
                 <path
                   d="M31 15H40V24"
@@ -43,6 +44,7 @@ export default function Benefits() {
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  pathLength="1"
                 />
               </svg>
             </span>
