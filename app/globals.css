@@ -180,18 +180,11 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 }
 --- end aurora --- */
 
-/* Drifting dot grid */
+/* Static dot grid */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background-image: radial-gradient(circle, oklch(1 0 0 / 0.22) 1.4px, transparent 1.8px);
-  background-size: 28px 28px;
-  animation: dot-drift 12s linear infinite;
-}
-@keyframes dot-drift {
-  to { background-position: 56px 56px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero::before { animation: none; }
+  background-image: radial-gradient(circle, oklch(1 0 0 / 0.10) 1px, transparent 1.5px);
+  background-size: 24px 24px;
 }
 .hero__inner {
   position: relative; z-index: 1;
