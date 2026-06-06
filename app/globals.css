@@ -121,7 +121,12 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .nav__inner { display: flex; align-items: center; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; }
 .brand__name { color: var(--ink); }
-.brand__dot { width: 20px; height: 20px; border-radius: 0; background: var(--coral); flex: none; }
+.brand__dot {
+  width: 28px; height: 22px; flex: none;
+  background-color: var(--coral);
+  -webkit-mask: url("/logo.png") center / contain no-repeat;
+          mask: url("/logo.png") center / contain no-repeat;
+}
 .brand--light .brand__name { color: #fff; }
 
 /* Nav is transparent over the hero image until the page is scrolled */
