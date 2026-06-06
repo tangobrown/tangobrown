@@ -93,10 +93,10 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   background: oklch(0.18 0.02 262 / 0.72); backdrop-filter: blur(14px) saturate(1.4);
   border-bottom-color: oklch(1 0 0 / 0.10); padding-block: 12px;
 }
-.nav__inner { display: flex; align-items: center; gap: 24px; }
+.nav__inner { position: relative; display: flex; align-items: center; gap: 24px; }
 .brand { display: inline-flex; align-items: center; }
 .brand__dot {
-  width: 44px; height: 34px; flex: none;
+  width: 52px; height: 40px; flex: none;
   background-color: #fff;
   -webkit-mask: url("/logo.png") center / contain no-repeat;
           mask: url("/logo.png") center / contain no-repeat;
@@ -107,12 +107,15 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .nav .nav__links a:hover { color: #fff; }
 .nav .nav__burger span { background: #fff; }
 
-.nav__links { display: flex; gap: 32px; margin-left: auto; font-weight: 600; font-size: 0.96rem; }
+.nav__links {
+  display: flex; gap: 32px; font-weight: 600; font-size: 0.96rem;
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+}
 .nav__links a { position: relative; padding: 4px 0; color: var(--ink-soft); transition: color .2s; }
 .nav__links a::after { content: ""; position: absolute; left: 0; bottom: -3px; height: 2px; width: 0; background: var(--coral); transition: width .25s var(--ease); border-radius: 2px; }
 .nav__links a:hover { color: var(--ink); }
 .nav__links a:hover::after { width: 100%; }
-.nav__cta { margin-left: 4px; }
+.nav__cta { margin-left: auto; }
 
 .nav__burger { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; margin-left: auto; }
 .nav__burger span { width: 24px; height: 2.5px; border-radius: 3px; background: var(--ink); transition: transform .3s, opacity .3s; }
@@ -401,6 +404,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   .nav__burger { display: flex; }
   .nav.is-open .nav__links {
     display: flex; flex-direction: column; gap: 4px; position: absolute; top: 100%; left: 14px; right: 14px;
+    transform: none;
     background: oklch(0.18 0.02 262 / 0.96); backdrop-filter: blur(14px) saturate(1.4);
     padding: 12px; border: 1px solid oklch(1 0 0 / 0.10); border-radius: var(--radius); box-shadow: var(--shadow-lg); margin: 8px 0 0;
   }
