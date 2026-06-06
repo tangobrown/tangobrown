@@ -1,11 +1,19 @@
+import Image from "next/image";
+import heroImg from "@/public/hero-tim.jpg";
+
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      {/* HERO BACKGROUND: swap the placeholder's background-image for a full-width photo (Tim on the right) */}
-      <div className="hero__bg" data-placeholder>
-        <div className="ph ph--hero">
-          <span className="ph__label">full-width hero background image — you, on the right</span>
-        </div>
+      <div className="hero__bg">
+        <Image
+          src={heroImg}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          placeholder="blur"
+          style={{ objectFit: "cover", objectPosition: "70% center" }}
+        />
       </div>
       <div className="hero__overlay" aria-hidden="true"></div>
 
