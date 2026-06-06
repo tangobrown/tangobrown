@@ -397,6 +397,88 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .t-card__avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--bg-alt); border: 1px solid var(--line); flex: none; }
 
 /* =================================================================
+   PRICING
+   ================================================================= */
+.pricing { background: var(--bg); }
+.pricing__grid {
+  list-style: none; display: grid;
+  grid-template-columns: repeat(3, 1fr); gap: 22px;
+  align-items: stretch;
+}
+.price-card {
+  background: var(--paper); border: 1px solid var(--line);
+  padding: 36px 30px 32px;
+  display: flex; flex-direction: column; gap: 22px;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+}
+.price-card:hover {
+  transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--line-strong);
+}
+.price-card__head { display: grid; gap: 8px; }
+.price-card__tag {
+  font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral-deep);
+}
+.price-card__price {
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 2.6rem; line-height: 1; color: var(--ink); font-weight: 700;
+  margin-top: 6px;
+}
+.price-card__from {
+  display: inline-block; margin-right: 10px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 400; font-size: 0.95rem; color: var(--ink-soft);
+  vertical-align: 0.4em;
+}
+.price-card__period { color: var(--ink-soft); font-size: 0.95rem; }
+.price-card__list { list-style: none; display: grid; gap: 11px; }
+.price-card__list li {
+  position: relative; padding-left: 30px;
+  font-weight: 600; color: var(--ink); font-size: 0.98rem;
+}
+.price-card__list li::before {
+  content: ""; position: absolute; left: 1px; top: 6px;
+  width: 17px; height: 17px;
+  background: var(--coral);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.price-card .btn { margin-top: auto; }
+
+/* =================================================================
+   FAQ (native <details>/<summary> accordion)
+   ================================================================= */
+.faq { background: var(--bg-alt); }
+.faq__list { max-width: 800px; margin: 0 auto; display: grid; gap: 12px; }
+.faq__item {
+  background: var(--paper); border: 1px solid var(--line);
+  transition: border-color .25s, box-shadow .25s;
+}
+.faq__item:hover { border-color: var(--line-strong); }
+.faq__item[open] { border-color: var(--line-strong); box-shadow: var(--shadow-sm); }
+.faq__q {
+  list-style: none; cursor: pointer;
+  padding: 22px 28px;
+  font-weight: 600; color: var(--ink); font-size: 1.05rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::after {
+  content: ""; flex: none;
+  width: 18px; height: 18px;
+  background: var(--coral);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform .25s var(--ease);
+}
+.faq__item[open] .faq__q::after { transform: rotate(180deg); }
+.faq__a {
+  padding: 0 28px 24px;
+  color: var(--ink-soft); font-size: 0.98rem; line-height: 1.65;
+  max-width: 70ch;
+}
+
+/* =================================================================
    CONTACT
    ================================================================= */
 .contact { background: var(--bg-alt); border-top: 1px solid var(--line); overflow: hidden; }
@@ -485,6 +567,9 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   .slide { grid-template-columns: 1fr; gap: 30px; }
   .slide__shot { order: -1; }
   .t-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  .pricing__grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  .faq__q { padding: 18px 22px; font-size: 1rem; }
+  .faq__a { padding: 0 22px 20px; }
   .contact__grid { grid-template-columns: 1fr; gap: 38px; }
   .footer__links { margin-left: 0; }
 }
