@@ -23,7 +23,6 @@ export default function Nav() {
       <div className="nav__inner container">
         <a href="#top" className="brand" aria-label="Tim Brown home" onClick={close}>
           <span className="brand__dot"></span>
-          <span className="brand__name">Tim&nbsp;Brown</span>
         </a>
         <nav className="nav__links" aria-label="Primary">
           <a href="#benefits" onClick={close}>Why me</a>

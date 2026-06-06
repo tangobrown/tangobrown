@@ -2,9 +2,8 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <a href="#top" className="brand brand--light">
+        <a href="#top" className="brand" aria-label="Tim Brown home">
           <span className="brand__dot"></span>
-          <span className="brand__name">Tim&nbsp;Brown</span>
         </a>
         <p className="footer__tag">
           Modern digital solutions for small businesses across the UK.

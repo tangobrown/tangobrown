@@ -94,15 +94,13 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   border-bottom-color: oklch(1 0 0 / 0.10); padding-block: 12px;
 }
 .nav__inner { display: flex; align-items: center; gap: 24px; }
-.brand { display: inline-flex; align-items: center; gap: 11px; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; }
-.brand__name { color: #fff; }
+.brand { display: inline-flex; align-items: center; }
 .brand__dot {
-  width: 28px; height: 22px; flex: none;
-  background-color: var(--coral);
+  width: 44px; height: 34px; flex: none;
+  background-color: #fff;
   -webkit-mask: url("/logo.png") center / contain no-repeat;
           mask: url("/logo.png") center / contain no-repeat;
 }
-.brand--light .brand__name { color: #fff; }
 
 /* Nav stays dark with white text in both states */
 .nav .nav__links a { color: oklch(1 0 0 / 0.82); }
