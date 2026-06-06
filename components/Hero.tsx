@@ -18,11 +18,9 @@ export default function Hero() {
             <a href="#contact" className="btn btn--primary btn--lg">Start a project</a>
             <a href="#services" className="btn btn--ghost btn--lg">See what I do</a>
           </div>
-          <ul className="hero__proof reveal">
-            <li><strong>UK&nbsp;based</strong><span>Exeter, Devon</span></li>
-            <li><strong>Human&nbsp;+&nbsp;AI</strong><span>search ready</span></li>
-            <li><strong>End&nbsp;to&nbsp;end</strong><span>build &amp; hosting</span></li>
-          </ul>
+          <p className="hero__proof reveal">
+            <strong>UK&nbsp;based</strong> · <span>Exeter, Devon</span>
+          </p>
         </div>
         <div className="hero__photo reveal">
           <Image

@@ -199,12 +199,11 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .hero .btn--ghost:hover { background: var(--coral); border-color: var(--coral); color: #fff; }
 .hero .eyebrow { color: var(--coral-soft); }
 .hero__proof {
-  list-style: none; display: flex; flex-wrap: wrap; gap: 36px;
-  margin-top: 44px; padding-top: 26px; border-top: 1px solid oklch(1 0 0 / 0.22);
+  margin-top: 32px;
+  font-size: 0.95rem;
+  color: oklch(0.93 0.004 260 / 0.78);
 }
-.hero__proof li { display: flex; flex-direction: column; }
-.hero__proof strong { font-size: 1.02rem; font-weight: 800; color: #fff; }
-.hero__proof span { font-size: 0.85rem; color: oklch(0.93 0.004 260 / 0.72); }
+.hero__proof strong { font-weight: 700; color: #fff; }
 
 /* =================================================================
    BENEFITS
