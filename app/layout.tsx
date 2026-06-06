@@ -1,20 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk, Inter } from "next/font/google";
+import { Inria_Serif, Figtree } from "next/font/google";
 import "./globals.css";
 
-const hanken = Hanken_Grotesk({
+const heading = Inria_Serif({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
-  variable: "--font-hanken",
+  weight: ["400", "700"],
+  variable: "--font-heading",
   display: "swap",
 });
 
-const inter = Inter({
+const body = Figtree({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -35,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${hanken.variable} ${inter.variable}`}>
+    <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -43,9 +43,9 @@
 .palette-switch {
   position: fixed; left: 20px; bottom: 20px; z-index: 80;
   background: var(--paper); border: 1px solid var(--line-strong); box-shadow: var(--shadow-lg);
-  padding: 12px 14px; display: flex; flex-direction: column; gap: 9px; font-family: var(--font-inter), system-ui, sans-serif;
+  padding: 12px 14px; display: flex; flex-direction: column; gap: 9px; font-family: var(--font-body), system-ui, sans-serif;
 }
-.palette-switch__label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); font-family: var(--font-inter), system-ui, sans-serif; }
+.palette-switch__label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); font-family: var(--font-body), system-ui, sans-serif; }
 .palette-switch__row { display: flex; gap: 8px; }
 .palette-switch__sw { width: 26px; height: 26px; border: 2px solid transparent; outline: 1px solid var(--line); outline-offset: -1px; cursor: pointer; padding: 0; }
 .palette-switch__sw[aria-pressed="true"] { border-color: var(--ink); }
@@ -64,7 +64,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
   background: var(--bg);
   color: var(--ink);
   font-size: 17px;
@@ -74,8 +74,8 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-hanken), system-ui, sans-serif;
-  font-weight: 800;
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
