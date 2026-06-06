@@ -12,7 +12,7 @@ export default function Hero() {
           priority
           sizes="100vw"
           placeholder="blur"
-          style={{ objectFit: "cover", objectPosition: "70% center" }}
+          style={{ objectFit: "cover", objectPosition: "top right" }}
         />
       </div>
       <div className="hero__overlay" aria-hidden="true"></div>

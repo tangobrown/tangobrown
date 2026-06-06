@@ -182,7 +182,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
    HERO (full-bleed background image, sits under the nav)
    ================================================================= */
 .hero {
-  position: relative; min-height: 100svh;
+  position: relative;
   display: flex; align-items: center;
   padding-top: 150px; padding-bottom: 90px;
   color: #fff; overflow: hidden;
@@ -425,7 +425,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   }
   .nav.is-open .nav__links a { padding: 11px 12px; }
 
-  .hero { min-height: 88svh; padding-top: 116px; padding-bottom: 64px; }
+  .hero { padding-top: 116px; padding-bottom: 64px; }
   .hero__lead { max-width: none; }
 
   .benefits__grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
