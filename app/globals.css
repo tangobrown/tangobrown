@@ -8,11 +8,11 @@
   --bg-alt:      oklch(0.984 0.004 75);    /* faint section tint   */
   --paper:       #ffffff;
 
-  /* Accent — themeable via [data-palette] blocks below. Default: Coral */
-  --coral:       oklch(0.645 0.170 33);
-  --coral-deep:  oklch(0.550 0.160 31);
-  --coral-tint:  oklch(0.966 0.024 45);
-  --coral-soft:  oklch(0.850 0.100 48);   /* light accent for dark sections */
+  /* Accent — teal (--coral kept as the variable name for backwards compat) */
+  --coral:       oklch(0.71 0.14 212.01);
+  --coral-deep:  oklch(0.55 0.12 212.01);
+  --coral-tint:  oklch(0.97 0.02 212.01);
+  --coral-soft:  oklch(0.84 0.09 212.01);
 
   /* Ink / neutrals */
   --ink:         oklch(0.245 0.018 262);   /* near-black slate     */
@@ -31,31 +31,6 @@
   --maxw: 1180px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-/* ---- Accent palettes (only the accent changes; dark sections stay) ---- */
-:root[data-palette="cobalt"]  { --coral: oklch(0.575 0.165 255); --coral-deep: oklch(0.490 0.150 257); --coral-tint: oklch(0.966 0.020 255); --coral-soft: oklch(0.820 0.095 250); }
-:root[data-palette="emerald"] { --coral: oklch(0.620 0.130 165); --coral-deep: oklch(0.520 0.120 167); --coral-tint: oklch(0.964 0.022 165); --coral-soft: oklch(0.840 0.085 168); }
-:root[data-palette="violet"]  { --coral: oklch(0.575 0.170 290); --coral-deep: oklch(0.490 0.160 292); --coral-tint: oklch(0.965 0.022 292); --coral-soft: oklch(0.830 0.095 292); }
-:root[data-palette="amber"]   { --coral: oklch(0.700 0.140 70);  --coral-deep: oklch(0.560 0.125 62);  --coral-tint: oklch(0.968 0.030 80);  --coral-soft: oklch(0.860 0.105 82); }
-:root[data-palette="slate"]   { --coral: oklch(0.520 0.045 250); --coral-deep: oklch(0.420 0.045 252); --coral-tint: oklch(0.962 0.008 250); --coral-soft: oklch(0.800 0.040 248); }
-
-/* ---- Palette preview switcher (REMOVE this + its markup/JS once you pick) ---- */
-.palette-switch {
-  position: fixed; left: 20px; bottom: 20px; z-index: 80;
-  background: var(--paper); border: 1px solid var(--line-strong); box-shadow: var(--shadow-lg);
-  padding: 12px 14px; display: flex; flex-direction: column; gap: 9px; font-family: var(--font-body), system-ui, sans-serif;
-}
-.palette-switch__label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); font-family: var(--font-body), system-ui, sans-serif; }
-.palette-switch__row { display: flex; gap: 8px; }
-.palette-switch__sw { width: 26px; height: 26px; border: 2px solid transparent; outline: 1px solid var(--line); outline-offset: -1px; cursor: pointer; padding: 0; }
-.palette-switch__sw[aria-pressed="true"] { border-color: var(--ink); }
-.palette-switch__sw[data-p="coral"]   { background: oklch(0.645 0.170 33); }
-.palette-switch__sw[data-p="cobalt"]  { background: oklch(0.575 0.165 255); }
-.palette-switch__sw[data-p="emerald"] { background: oklch(0.620 0.130 165); }
-.palette-switch__sw[data-p="violet"]  { background: oklch(0.575 0.170 290); }
-.palette-switch__sw[data-p="amber"]   { background: oklch(0.700 0.140 70); }
-.palette-switch__sw[data-p="slate"]   { background: oklch(0.520 0.045 250); }
-@media (max-width: 600px) { .palette-switch { left: 12px; bottom: 12px; padding: 9px 11px; } }
 
 /* =================================================================
    Base
