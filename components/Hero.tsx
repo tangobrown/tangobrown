@@ -1,22 +1,9 @@
 import Image from "next/image";
-import heroImg from "@/public/hero-tim.jpg";
+import portrait from "@/public/tim-portrait.jpg";
 
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <div className="hero__bg">
-        <Image
-          src={heroImg}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          placeholder="blur"
-          style={{ objectFit: "cover", objectPosition: "top right" }}
-        />
-      </div>
-      <div className="hero__overlay" aria-hidden="true"></div>
-
       <div className="hero__inner container">
         <div className="hero__copy">
           <span className="eyebrow reveal">Hey, I&apos;m Tim Brown...</span>
@@ -36,6 +23,15 @@ export default function Hero() {
             <li><strong>Human&nbsp;+&nbsp;AI</strong><span>search ready</span></li>
             <li><strong>End&nbsp;to&nbsp;end</strong><span>build &amp; hosting</span></li>
           </ul>
+        </div>
+        <div className="hero__photo reveal">
+          <Image
+            src={portrait}
+            alt="Tim Brown"
+            priority
+            sizes="(max-width: 980px) 320px, 480px"
+            placeholder="blur"
+          />
         </div>
       </div>
     </section>
