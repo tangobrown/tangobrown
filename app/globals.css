@@ -115,12 +115,12 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   padding-block: 18px; border-bottom: 1px solid transparent;
 }
 .nav.is-scrolled {
-  background: oklch(1 0 0 / 0.82); backdrop-filter: blur(14px) saturate(1.4);
-  border-bottom-color: var(--line); padding-block: 12px;
+  background: oklch(0.18 0.02 262 / 0.72); backdrop-filter: blur(14px) saturate(1.4);
+  border-bottom-color: oklch(1 0 0 / 0.10); padding-block: 12px;
 }
 .nav__inner { display: flex; align-items: center; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; }
-.brand__name { color: var(--ink); }
+.brand__name { color: #fff; }
 .brand__dot {
   width: 28px; height: 22px; flex: none;
   background-color: var(--coral);
@@ -129,11 +129,10 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 }
 .brand--light .brand__name { color: #fff; }
 
-/* Nav is transparent over the hero image until the page is scrolled */
-.nav:not(.is-scrolled) .brand__name { color: #fff; }
-.nav:not(.is-scrolled) .nav__links a { color: oklch(1 0 0 / 0.82); }
-.nav:not(.is-scrolled) .nav__links a:hover { color: #fff; }
-.nav:not(.is-scrolled) .nav__burger span { background: #fff; }
+/* Nav stays dark with white text in both states */
+.nav .nav__links a { color: oklch(1 0 0 / 0.82); }
+.nav .nav__links a:hover { color: #fff; }
+.nav .nav__burger span { background: #fff; }
 
 .nav__links { display: flex; gap: 32px; margin-left: auto; font-weight: 600; font-size: 0.96rem; }
 .nav__links a { position: relative; padding: 4px 0; color: var(--ink-soft); transition: color .2s; }
@@ -411,7 +410,8 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   .nav__burger { display: flex; }
   .nav.is-open .nav__links {
     display: flex; flex-direction: column; gap: 4px; position: absolute; top: 100%; left: 14px; right: 14px;
-    background: var(--paper); padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-lg); margin: 8px 0 0;
+    background: oklch(0.18 0.02 262 / 0.96); backdrop-filter: blur(14px) saturate(1.4);
+    padding: 12px; border: 1px solid oklch(1 0 0 / 0.10); border-radius: var(--radius); box-shadow: var(--shadow-lg); margin: 8px 0 0;
   }
   .nav.is-open .nav__links a { padding: 11px 12px; }
 
