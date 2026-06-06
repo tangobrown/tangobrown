@@ -191,9 +191,11 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .hero__bg .ph { height: 100%; border-radius: 0; }
 .hero__overlay {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background:
-    linear-gradient(90deg, oklch(0.17 0.02 262 / 0.80) 0%, oklch(0.17 0.02 262 / 0.48) 42%, oklch(0.17 0.02 262 / 0.06) 72%, transparent 100%),
-    linear-gradient(0deg, oklch(0.17 0.02 262 / 0.42) 0%, transparent 36%);
+  background: linear-gradient(90deg,
+    oklch(0.17 0.02 262 / 0.90) 0%,
+    oklch(0.17 0.02 262 / 0.55) 45%,
+    oklch(0.17 0.02 262 / 0.15) 80%,
+    oklch(0.17 0.02 262 / 0.00) 100%);
 }
 .hero__inner { position: relative; z-index: 2; }
 .hero__copy { max-width: 640px; }
