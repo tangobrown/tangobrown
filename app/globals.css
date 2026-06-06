@@ -384,9 +384,11 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
    ================================================================= */
 .testimonials {
   background-image:
-    radial-gradient(circle, oklch(1 0 0 / 0.10) 1px, transparent 1.5px),
-    linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
-  background-size: 24px 24px, auto;
+    linear-gradient(oklch(0.18 0.02 262 / 0.78), oklch(0.18 0.02 262 / 0.78)),
+    url("/testimonials-bg.jpg");
+  background-size: 100% 100%, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   color: #fff;
 }
 .testimonials .eyebrow { color: var(--coral-soft); }
