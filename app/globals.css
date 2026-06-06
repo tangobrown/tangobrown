@@ -163,6 +163,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   color: #fff; overflow: hidden; isolation: isolate;
   background: linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
 }
+/* --- AURORA BLOB (parked — uncomment to restore) ---
 .hero::before {
   content: ""; position: absolute; z-index: -1; pointer-events: none;
   width: 70vmax; height: 70vmax; border-radius: 50%;
@@ -176,6 +177,18 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   0%   { transform: translate(0, 0) scale(1); }
   50%  { transform: translate(20vw, 12vh) scale(1.15); }
   100% { transform: translate(-10vw, 8vh) scale(0.9); }
+}
+--- end aurora --- */
+
+/* Drifting dot grid */
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(circle, oklch(1 0 0 / 0.10) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  animation: dot-drift 40s linear infinite;
+}
+@keyframes dot-drift {
+  to { background-position: 24px 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero::before { animation: none; }
