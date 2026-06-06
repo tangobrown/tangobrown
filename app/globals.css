@@ -382,7 +382,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 /* =================================================================
    TESTIMONIALS
    ================================================================= */
-.testimonials { background: var(--bg); }
+.testimonials { background: var(--bg); border-top: 1px solid var(--line); }
 .t-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .t-card {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
