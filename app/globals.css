@@ -382,7 +382,16 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 /* =================================================================
    TESTIMONIALS
    ================================================================= */
-.testimonials { background: var(--bg); border-top: 1px solid var(--line); }
+.testimonials {
+  background-image:
+    radial-gradient(circle, oklch(1 0 0 / 0.10) 1px, transparent 1.5px),
+    linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
+  background-size: 24px 24px, auto;
+  color: #fff;
+}
+.testimonials .eyebrow { color: var(--coral-soft); }
+.testimonials .section__title { color: #fff; }
+.testimonials .section__sub { color: oklch(0.92 0.005 260 / 0.78); }
 .t-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .t-card {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
