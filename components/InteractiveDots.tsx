@@ -4,8 +4,9 @@ import { useEffect, useRef } from "react";
 
 /**
  * Canvas-rendered dot grid. Dots near the cursor displace outward
- * with a smooth falloff, like ripples on water. The cursor position
- * is lerped for fluid follow; once mouse leaves, dots ease back.
+ * with a smooth falloff, like ripples on water, and tint toward
+ * the accent colour as they're pushed. The cursor position is
+ * lerped for fluid follow; once mouse leaves, dots ease back.
  * On touch / reduced-motion the grid renders static.
  */
 export default function InteractiveDots() {
@@ -24,7 +25,22 @@ export default function InteractiveDots() {
     const DOT_RADIUS = 1;
     const INFLUENCE = 140;
     const MAX_PUSH = 14;
-    const COLOR = "rgba(255, 255, 255, 0.12)";
+    const BASE_ALPHA = 0.12;
+    const TINT_ALPHA = 0.32;
+
+    // Resolve --coral at runtime so the tint always matches the live accent
+    const probe = document.createElement("div");
+    probe.style.color = "var(--coral)";
+    probe.style.display = "none";
+    document.body.appendChild(probe);
+    const accent = getComputedStyle(probe).color;
+    document.body.removeChild(probe);
+    const m = accent.match(/[\d.]+/g);
+    const TINT_R = m ? parseFloat(m[0]) : 99;
+    const TINT_G = m ? parseFloat(m[1]) : 200;
+    const TINT_B = m ? parseFloat(m[2]) : 222;
+
+    const BASE_COLOR = `rgba(255, 255, 255, ${BASE_ALPHA})`;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -55,11 +71,11 @@ export default function InteractiveDots() {
       mouseY += (targetY - mouseY) * 0.18;
 
       ctx!.clearRect(0, 0, width, height);
-      ctx!.fillStyle = COLOR;
 
       const cols = Math.ceil(width / SPACING) + 1;
       const rows = Math.ceil(height / SPACING) + 1;
       const inf2 = INFLUENCE * INFLUENCE;
+      let lastStyle = "";
 
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
@@ -67,6 +83,7 @@ export default function InteractiveDots() {
           const baseY = j * SPACING;
           let x = baseX;
           let y = baseY;
+          let style = BASE_COLOR;
 
           if (!reduce) {
             const dx = baseX - mouseX;
@@ -78,9 +95,22 @@ export default function InteractiveDots() {
               const push = f * f * MAX_PUSH; // ease-out squared
               x += (dx / dist) * push;
               y += (dy / dist) * push;
+
+              // Tint white -> accent and brighten with intensity
+              const t = f * f;
+              const r = 255 + (TINT_R - 255) * t;
+              const g = 255 + (TINT_G - 255) * t;
+              const b = 255 + (TINT_B - 255) * t;
+              const a = BASE_ALPHA + (TINT_ALPHA - BASE_ALPHA) * t;
+              style = `rgba(${r | 0}, ${g | 0}, ${b | 0}, ${a.toFixed(3)})`;
             }
           }
 
+          // Only update fillStyle when it changes (most dots share BASE_COLOR)
+          if (style !== lastStyle) {
+            ctx!.fillStyle = style;
+            lastStyle = style;
+          }
           ctx!.beginPath();
           ctx!.arc(x, y, DOT_RADIUS, 0, Math.PI * 2);
           ctx!.fill();
