@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import InteractiveDots from "@/components/InteractiveDots";
 
 type Project = { kicker: string; title: string; body: string; href: string };
 
@@ -75,6 +76,7 @@ export default function Work() {
 
   return (
     <section className="work section" id="work">
+      <InteractiveDots />
       <div className="container">
         <div className="section__head reveal">
           <span className="eyebrow eyebrow--center">A snapshot of my work</span>

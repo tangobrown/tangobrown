@@ -1,6 +1,9 @@
+import InteractiveDots from "@/components/InteractiveDots";
+
 export default function Footer() {
   return (
     <footer className="footer">
+      <InteractiveDots />
       <div className="container footer__inner">
         <a href="#top" className="brand" aria-label="Tim Brown home">
           <span className="brand__dot"></span>

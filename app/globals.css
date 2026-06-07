@@ -180,11 +180,9 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 }
 --- end aurora --- */
 
-/* Static dot grid */
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background-image: radial-gradient(circle, oklch(1 0 0 / 0.10) 1px, transparent 1.5px);
-  background-size: 24px 24px;
+/* Interactive dot canvas — sits behind hero content */
+.dots-canvas {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
 }
 .hero__inner {
   position: relative; z-index: 1;
@@ -334,10 +332,8 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
    WORK — full-width slideshow
    ================================================================= */
 .work {
-  background-image:
-    radial-gradient(circle, oklch(1 0 0 / 0.10) 1px, transparent 1.5px),
-    linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
-  background-size: 24px 24px, auto;
+  position: relative; isolation: isolate;
+  background: linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
   color: #fff; overflow: hidden;
 }
 .work .eyebrow { color: var(--coral-soft); }
@@ -523,9 +519,8 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
    FOOTER
    ================================================================= */
 .footer {
+  position: relative; isolation: isolate; overflow: hidden;
   background-color: var(--ink);
-  background-image: radial-gradient(circle, oklch(1 0 0 / 0.10) 1px, transparent 1.5px);
-  background-size: 24px 24px;
   color: oklch(0.92 0.006 260); padding: 56px 0 30px;
 }
 .footer__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px; }
