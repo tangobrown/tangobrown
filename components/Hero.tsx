@@ -11,8 +11,8 @@ export default function Hero() {
             Your website <span className="hl">&amp;</span> technology guy
           </h1>
           <p className="hero__lead reveal">
-            The digital landscape is constantly changing. I make sure that you&apos;re
-            ahead of your competition with modern, smart digital solutions &amp; support.
+            Website, marketing &amp; technology is evolving rapidly. With me in your
+            corner, you&apos;ll stay ahead of competitors and crush it online.
           </p>
           <div className="hero__actions reveal">
             <a href="#contact" className="btn btn--primary btn--lg">Start a project</a>
