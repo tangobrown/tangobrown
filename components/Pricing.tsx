@@ -1,6 +1,5 @@
 type Tier = {
   tag: string;
-  from?: boolean;
   price: string;
   period: string;
   features: string[];
@@ -19,7 +18,6 @@ const tiers: Tier[] = [
   },
   {
     tag: "Hosting",
-    from: true,
     price: "£20",
     period: "per month",
     features: [
@@ -30,7 +28,6 @@ const tiers: Tier[] = [
   },
   {
     tag: "Care plan",
-    from: true,
     price: "£280",
     period: "per month",
     features: [
@@ -57,10 +54,7 @@ export default function Pricing() {
             <li className="price-card reveal" key={t.tag}>
               <div className="price-card__head">
                 <span className="price-card__tag">{t.tag}</span>
-                <p className="price-card__price">
-                  {t.from && <span className="price-card__from">from</span>}
-                  {t.price}
-                </p>
+                <p className="price-card__price">{t.price}</p>
                 <p className="price-card__period">{t.period}</p>
               </div>
               <ul className="price-card__list">
@@ -74,6 +68,9 @@ export default function Pricing() {
             </li>
           ))}
         </ul>
+        <p className="pricing__note reveal">
+          Prices may differ from the above based on project scope.
+        </p>
       </div>
     </section>
   );

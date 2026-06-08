@@ -431,13 +431,11 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   font-size: 2.6rem; line-height: 1; color: var(--ink); font-weight: 400;
   margin-top: 6px;
 }
-.price-card__from {
-  display: inline-block; margin-right: 10px;
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-weight: 400; font-size: 0.95rem; color: var(--ink-soft);
-  vertical-align: 0.4em;
-}
 .price-card__period { color: var(--ink-soft); font-size: 0.95rem; }
+.pricing__note {
+  margin-top: 36px; text-align: center;
+  font-size: 0.95rem; color: var(--ink-soft);
+}
 .price-card__list { list-style: none; display: grid; gap: 11px; }
 .price-card__list li {
   position: relative; padding-left: 30px;
