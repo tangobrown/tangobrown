@@ -160,8 +160,10 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   position: relative; min-height: 100svh;
   display: flex; align-items: center;
   padding-top: 150px; padding-bottom: 90px;
-  color: #fff; overflow: hidden; isolation: isolate;
-  background: linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
+  color: #fff; overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, oklch(0.71 0.14 212 / 0.18), transparent 70%),
+    linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
 }
 /* --- AURORA BLOB (parked — uncomment to restore) ---
 .hero::before {
@@ -180,10 +182,6 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 }
 --- end aurora --- */
 
-/* Interactive dot canvas — sits behind hero content */
-.dots-canvas {
-  position: absolute; inset: 0; z-index: -1; pointer-events: none;
-}
 .hero__inner {
   position: relative; z-index: 1;
   display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;
@@ -332,8 +330,9 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
    WORK — full-width slideshow
    ================================================================= */
 .work {
-  position: relative; isolation: isolate;
-  background: linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, oklch(0.71 0.14 212 / 0.18), transparent 70%),
+    linear-gradient(125deg, oklch(0.235 0.025 262), oklch(0.165 0.02 262));
   color: #fff; overflow: hidden;
 }
 .work .eyebrow { color: var(--coral-soft); }
@@ -517,8 +516,8 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
    FOOTER
    ================================================================= */
 .footer {
-  position: relative; isolation: isolate; overflow: hidden;
   background-color: var(--ink);
+  background-image: radial-gradient(ellipse 80% 60% at 20% 10%, oklch(0.71 0.14 212 / 0.18), transparent 70%);
   color: oklch(0.92 0.006 260); padding: 56px 0 30px;
 }
 .footer__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px; }

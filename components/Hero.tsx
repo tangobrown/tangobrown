@@ -1,11 +1,9 @@
 import Image from "next/image";
 import portrait from "@/public/tim-portrait.jpg";
-import InteractiveDots from "@/components/InteractiveDots";
 
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <InteractiveDots />
       <div className="hero__inner container">
         <div className="hero__copy">
           <span className="eyebrow reveal">Hey, I&apos;m Tim Brown...</span>
