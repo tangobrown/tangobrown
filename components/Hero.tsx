@@ -11,9 +11,9 @@ export default function Hero() {
             Your website, Marketing <span className="hl">&amp;</span> Technology guy
           </h1>
           <p className="hero__lead reveal">
-            I use AI and automation strategies to supercharge your growth, then back
-            it with hands-on work to make sure everything&apos;s done right. All without
-            the big agency price tag.
+            With me in your corner, you&apos;ve got 18+ years of digital experience,
+            leveraging smart AI &amp; Automation strategies to supercharge growth
+            for your business 🚀
           </p>
           <div className="hero__actions reveal">
             <a href="#contact" className="btn btn--primary btn--lg">Start a project</a>
