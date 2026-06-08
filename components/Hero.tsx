@@ -8,11 +8,11 @@ export default function Hero() {
         <div className="hero__copy">
           <span className="eyebrow reveal">Websites, Optimisation &amp; Automation</span>
           <h1 className="hero__title reveal">
-            Your website, Marketing <span className="hl">&amp;</span> Tech guy
+            Your website, Marketing <span className="hl">&amp;</span> Technology guy
           </h1>
           <p className="hero__lead reveal">
-            Website, marketing &amp; technology is evolving rapidly. With me in your
-            corner, you&apos;ll stay ahead of competitors and crush it online.
+            AI is changing the game. With me in your corner, you&apos;ll get big agency
+            service, without the price tag.
           </p>
           <div className="hero__actions reveal">
             <a href="#contact" className="btn btn--primary btn--lg">Start a project</a>
