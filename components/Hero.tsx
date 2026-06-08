@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="hero" id="hero">
       <div className="hero__inner container">
         <div className="hero__copy">
-          <span className="eyebrow reveal">Hey, I&apos;m Tim Brown...</span>
+          <span className="eyebrow reveal">Tim Brown | Exeter, Devon</span>
           <h1 className="hero__title reveal">
             Your website <span className="hl">&amp;</span> technology guy
           </h1>
@@ -19,7 +19,7 @@ export default function Hero() {
             <a href="#services" className="btn btn--ghost btn--lg">See what I do</a>
           </div>
           <p className="hero__proof reveal">
-            <strong>UK&nbsp;based</strong> · <span>Exeter, Devon</span>
+            <strong>Websites, Optimisation &amp; Automation</strong> <span>for small businesses</span>
           </p>
         </div>
         <div className="hero__photo reveal">
