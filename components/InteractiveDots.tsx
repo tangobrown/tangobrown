@@ -22,10 +22,10 @@ export default function InteractiveDots() {
 
     // Tunables
     const SPACING = 24;
-    const DOT_RADIUS = 1;
+    const PLUS_ARM = 2; // half-arm length; plus is (PLUS_ARM*2 + 1)px wide and tall
     const INFLUENCE = 140;
     const MAX_PUSH = 14;
-    const BASE_ALPHA = 0.12;
+    const BASE_ALPHA = 0.10;
     const TINT_ALPHA = 0.32;
 
     // Resolve --coral at runtime so the tint always matches the live accent
@@ -106,14 +106,14 @@ export default function InteractiveDots() {
             }
           }
 
-          // Only update fillStyle when it changes (most dots share BASE_COLOR)
+          // Only update fillStyle when it changes (most plus marks share BASE_COLOR)
           if (style !== lastStyle) {
             ctx!.fillStyle = style;
             lastStyle = style;
           }
-          ctx!.beginPath();
-          ctx!.arc(x, y, DOT_RADIUS, 0, Math.PI * 2);
-          ctx!.fill();
+          // Draw a small + sign: horizontal arm + vertical arm, both 1px thick
+          ctx!.fillRect(x - PLUS_ARM, y, PLUS_ARM * 2 + 1, 1);
+          ctx!.fillRect(x, y - PLUS_ARM, 1, PLUS_ARM * 2 + 1);
         }
       }
 
