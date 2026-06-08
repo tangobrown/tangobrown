@@ -7,6 +7,7 @@ const items = [
 export default function Testimonials() {
   return (
     <section className="testimonials section" id="testimonials">
+      <div className="testimonials__bg" aria-hidden="true"></div>
       <div className="container">
         <div className="section__head reveal">
           <span className="eyebrow eyebrow--center">Kind words</span>

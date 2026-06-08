@@ -379,14 +379,22 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
    TESTIMONIALS
    ================================================================= */
 .testimonials {
+  position: relative;
+  background: var(--bg);
+  color: #fff;
+}
+.testimonials__bg {
+  position: absolute; inset: 0;
+  max-width: var(--maxw); margin-inline: auto;
   background-image:
     linear-gradient(oklch(0.18 0.02 262 / 0.78), oklch(0.18 0.02 262 / 0.78)),
     url("/testimonials-bg.jpg");
   background-size: 100% 100%, cover;
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
-  color: #fff;
+  pointer-events: none;
 }
+.testimonials .container { position: relative; z-index: 1; }
 .testimonials .eyebrow { color: var(--coral-soft); }
 .testimonials .section__title { color: #fff; }
 .testimonials .section__sub { color: oklch(0.92 0.005 260 / 0.78); }
