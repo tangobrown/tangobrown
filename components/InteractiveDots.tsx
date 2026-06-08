@@ -21,12 +21,12 @@ export default function InteractiveDots() {
     if (!parent) return;
 
     // Tunables
-    const SPACING = 24;
-    const PLUS_ARM = 2; // half-arm length; plus is (PLUS_ARM*2 + 1)px wide and tall
-    const INFLUENCE = 140;
+    const SPACING = 42;
+    const PLUS_ARM = 4; // half-arm length; plus is (PLUS_ARM*2 + 1)px wide and tall
+    const INFLUENCE = 160;
     const MAX_PUSH = 14;
-    const BASE_ALPHA = 0.10;
-    const TINT_ALPHA = 0.32;
+    const BASE_ALPHA = 0.06;
+    const TINT_ALPHA = 0.22;
 
     // Resolve --coral at runtime so the tint always matches the live accent
     const probe = document.createElement("div");
