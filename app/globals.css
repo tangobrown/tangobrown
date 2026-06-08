@@ -196,11 +196,10 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .hero__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero__photo-tag {
   position: absolute; bottom: 0; right: 0; z-index: 2;
-  background: oklch(0.18 0.02 262 / 0.82);
-  backdrop-filter: blur(8px) saturate(1.2);
   color: #fff; font-size: 0.72rem; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
   padding: 8px 14px;
+  text-shadow: 0 1px 4px oklch(0 0 0 / 0.55);
 }
 .hero__title { font-size: clamp(1.9rem, 4.1vw, 3rem); color: #fff; }
 .hero__title .hl { color: var(--coral); }
