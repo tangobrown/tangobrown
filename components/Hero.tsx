@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="hero" id="hero">
       <div className="hero__inner container">
         <div className="hero__copy">
-          <span className="eyebrow reveal">Tim Brown | Exeter, Devon</span>
+          <span className="eyebrow reveal">Websites, Optimisation &amp; Automation</span>
           <h1 className="hero__title reveal">
             Your website <span className="hl">&amp;</span> technology guy
           </h1>
@@ -18,9 +18,6 @@ export default function Hero() {
             <a href="#contact" className="btn btn--primary btn--lg">Start a project</a>
             <a href="#services" className="btn btn--ghost btn--lg">See what I do</a>
           </div>
-          <p className="hero__proof reveal">
-            <strong>Websites, Optimisation &amp; Automation</strong> <span>for small businesses</span>
-          </p>
         </div>
         <div className="hero__photo reveal">
           <Image
@@ -30,6 +27,7 @@ export default function Hero() {
             sizes="(max-width: 980px) 320px, 480px"
             placeholder="blur"
           />
+          <span className="hero__photo-tag">Tim Brown | Exeter, Devon</span>
         </div>
       </div>
     </section>
