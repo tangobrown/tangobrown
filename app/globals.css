@@ -206,7 +206,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .hero__lead { margin-top: 22px; font-size: clamp(1.08rem, 1.5vw, 1.25rem); color: oklch(0.97 0.004 260 / 0.88); max-width: 42ch; }
 .hero__actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
 .hero .btn--ghost { background: transparent; color: #fff; border-color: oklch(1 0 0 / 0.55); }
-.hero .btn--ghost:hover { background: var(--coral); border-color: var(--coral); color: #fff; }
+.hero .btn--ghost:hover { background: transparent; border-color: var(--coral); color: var(--coral); }
 .hero .eyebrow { color: var(--coral-soft); }
 
 /* =================================================================
