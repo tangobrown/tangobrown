@@ -49,8 +49,8 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
-  font-weight: 700;
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 400; /* Boldonse is single-weight */
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -427,8 +427,8 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral-deep);
 }
 .price-card__price {
-  font-family: var(--font-heading), Georgia, serif;
-  font-size: 2.6rem; line-height: 1; color: var(--ink); font-weight: 700;
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-size: 2.6rem; line-height: 1; color: var(--ink); font-weight: 400;
   margin-top: 6px;
 }
 .price-card__from {

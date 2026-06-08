@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inria_Serif, Figtree } from "next/font/google";
+import { Boldonse, Figtree } from "next/font/google";
 import "./globals.css";
 
-const heading = Inria_Serif({
+const heading = Boldonse({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400"], // Boldonse ships in a single 400 weight only
   variable: "--font-heading",
   display: "swap",
 });
