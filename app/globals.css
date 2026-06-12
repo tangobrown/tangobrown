@@ -359,7 +359,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .work .slider__dots button { background: oklch(1 0 0 / 0.30); }
 .work .slider__dots button.is-active { background: var(--coral); }
 /* Horizontal slider — clipped to the container so neighbours don't bleed. */
-.slider { position: relative; }
+.slider { position: relative; max-width: 920px; margin-inline: auto; }
 .slider__viewport { overflow: hidden; }
 .slider__track {
   display: flex;
