@@ -11,9 +11,9 @@ export default function Hero() {
             Your Website <span className="hl">&amp;</span> Technology Guy
           </h1>
           <p className="hero__lead reveal">
-            With me in your corner, you&apos;ve got 18+ years of experience helping
-            businesses grow online + smart AI &amp; Automation strategies = growth
-            for your business 🚀
+            I&apos;ve got 15+ years experience helping businesses grow online with
+            high converting, well optimised websites along with time-saving AI
+            &amp; automation strategies.
           </p>
           <div className="hero__actions reveal">
             <a href="#contact" className="btn btn--primary btn--lg">Start a project</a>
