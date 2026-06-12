@@ -28,7 +28,7 @@ const projects: Project[] = [
 export default function Work() {
   const [index, setIndex] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const touch = useRef({ startY: 0, dy: 0, dragging: false });
+  const touch = useRef({ startX: 0, dx: 0, dragging: false });
 
   const stop = () => {
     if (timerRef.current) {
@@ -58,19 +58,19 @@ export default function Work() {
   }, []);
 
   const onTouchStart = (e: React.TouchEvent) => {
-    touch.current = { startY: e.touches[0].clientY, dy: 0, dragging: true };
+    touch.current = { startX: e.touches[0].clientX, dx: 0, dragging: true };
   };
   const onTouchMove = (e: React.TouchEvent) => {
     if (touch.current.dragging) {
-      touch.current.dy = e.touches[0].clientY - touch.current.startY;
+      touch.current.dx = e.touches[0].clientX - touch.current.startX;
     }
   };
   const onTouchEnd = () => {
-    const { dragging, dy } = touch.current;
-    if (dragging && Math.abs(dy) > 50) {
-      go(index + (dy < 0 ? 1 : -1));
+    const { dragging, dx } = touch.current;
+    if (dragging && Math.abs(dx) > 50) {
+      go(index + (dx < 0 ? 1 : -1));
     }
-    touch.current = { startY: 0, dy: 0, dragging: false };
+    touch.current = { startX: 0, dx: 0, dragging: false };
   };
 
   return (
@@ -82,6 +82,36 @@ export default function Work() {
         </div>
 
         <div className="slider reveal" id="slider">
+          <div className="slider__viewport">
+            <div
+              className="slider__track"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+              onMouseEnter={stop}
+              onMouseLeave={start}
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
+              {projects.map((p, i) => (
+                <div className="slide" role="group" aria-roledescription="slide" key={i}>
+                  <div className="slide__shot">
+                    <div className="ph ph--shot">
+                      <span className="ph__label">project screenshot 0{i + 1}</span>
+                    </div>
+                  </div>
+                  <div className="slide__text">
+                    <span className="slide__kicker">{p.kicker}</span>
+                    <h3>{p.title}</h3>
+                    <p>{p.body}</p>
+                    <a href={p.href} className="link-arrow">
+                      View project
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="slider__controls">
             <button
               className="slider__btn"
@@ -90,7 +120,7 @@ export default function Work() {
             >
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
-                  d="M5 15l7-7 7 7"
+                  d="M15 5l-7 7 7 7"
                   stroke="currentColor"
                   strokeWidth="2.2"
                   strokeLinecap="round"
@@ -116,7 +146,7 @@ export default function Work() {
             >
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
-                  d="M5 9l7 7 7-7"
+                  d="M9 5l7 7-7 7"
                   stroke="currentColor"
                   strokeWidth="2.2"
                   strokeLinecap="round"
@@ -124,36 +154,6 @@ export default function Work() {
                 />
               </svg>
             </button>
-          </div>
-
-          <div className="slider__viewport">
-            <div
-              className="slider__track"
-              style={{ transform: `translateY(-${index * 100}%)` }}
-              onMouseEnter={stop}
-              onMouseLeave={start}
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
-            >
-              {projects.map((p, i) => (
-                <div className="slide" role="group" aria-roledescription="slide" key={i}>
-                  <div className="slide__shot">
-                    <div className="ph ph--shot">
-                      <span className="ph__label">project screenshot 0{i + 1}</span>
-                    </div>
-                  </div>
-                  <div className="slide__text">
-                    <span className="slide__kicker">{p.kicker}</span>
-                    <h3>{p.title}</h3>
-                    <p>{p.body}</p>
-                    <a href={p.href} className="link-arrow">
-                      View project
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
