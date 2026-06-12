@@ -16,7 +16,7 @@ export default function Hero() {
             &amp; automation strategies.
           </p>
           <div className="hero__actions reveal">
-            <a href="#contact" className="btn btn--primary btn--lg">Start a project</a>
+            <a href="#contact" className="btn btn--primary btn--lg">Get Started</a>
             <a href="#services" className="btn btn--ghost btn--lg">See what I do</a>
           </div>
         </div>
