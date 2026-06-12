@@ -102,7 +102,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 .nav {
   position: fixed; inset: 0 0 auto 0; z-index: 60;
   transition: background .3s, box-shadow .3s, border-color .3s, padding .3s;
-  padding-block: 18px; border-bottom: 1px solid transparent;
+  padding-block: 18px; border-bottom: 1px solid oklch(1 0 0 / 0.12);
 }
 .nav.is-scrolled {
   background: oklch(0.18 0.02 262);
