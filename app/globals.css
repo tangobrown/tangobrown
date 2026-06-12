@@ -38,6 +38,20 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
+/* Page-frame hairlines: fixed vertical lines flanking the container.
+   Only when the viewport is wider than --maxw, so they hug the
+   container's outer edge instead of clipping content on small screens. */
+@media (min-width: 1180px) {
+  body::before,
+  body::after {
+    content: ""; position: fixed; top: 0; bottom: 0; width: 1px;
+    background: oklch(0.55 0.005 260 / 0.22);
+    z-index: 5; pointer-events: none;
+  }
+  body::before { left: calc(50% - var(--maxw) / 2); }
+  body::after  { left: calc(50% + var(--maxw) / 2); }
+}
+
 body {
   font-family: var(--font-body), system-ui, sans-serif;
   background: var(--bg);
@@ -91,8 +105,8 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   padding-block: 18px; border-bottom: 1px solid transparent;
 }
 .nav.is-scrolled {
-  background: oklch(0.18 0.02 262 / 0.72); backdrop-filter: blur(14px) saturate(1.4);
-  border-bottom-color: oklch(1 0 0 / 0.10); padding-block: 12px;
+  background: oklch(0.18 0.02 262);
+  border-bottom-color: oklch(1 0 0 / 0.12); padding-block: 12px;
 }
 .nav__inner { position: relative; display: flex; align-items: center; gap: 24px; }
 .brand { display: inline-flex; align-items: center; }
