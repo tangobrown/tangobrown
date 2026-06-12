@@ -172,9 +172,8 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
    HERO (dark two-column: copy left, portrait right, drifting aurora blobs)
    ================================================================= */
 .hero {
-  position: relative; min-height: 100svh;
-  display: flex;
-  padding-top: 150px; padding-bottom: 90px;
+  position: relative;
+  padding-top: 44px; padding-bottom: 44px;
   color: #fff; overflow: hidden;
   background:
     radial-gradient(ellipse 80% 60% at 20% 10%, oklch(0.71 0.14 212 / 0.18), transparent 70%),
@@ -199,14 +198,13 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 
 .hero__inner {
   position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1.1fr 0.9fr; grid-template-rows: 1fr;
-  gap: 56px;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px;
+  align-items: center;
 }
-.hero__copy { max-width: 640px; align-self: start; }
+.hero__copy { max-width: 640px; }
 .hero__photo {
   position: relative; width: 100%; max-width: 480px;
   aspect-ratio: 1 / 1; margin-left: auto;
-  align-self: end;
 }
 .hero__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero__photo-tag {
@@ -578,11 +576,9 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
   }
   .nav.is-open .nav__links a { padding: 11px 12px; }
 
-  .hero { min-height: auto; padding-top: 116px; padding-bottom: 64px; }
-  .hero__inner { grid-template-columns: 1fr; grid-template-rows: auto; gap: 40px; }
-  .hero__copy { align-self: auto; }
+  .hero__inner { grid-template-columns: 1fr; gap: 40px; }
   .hero__lead { max-width: none; }
-  .hero__photo { order: -1; max-width: 320px; margin: 0 auto; align-self: auto; }
+  .hero__photo { order: -1; max-width: 320px; margin: 0 auto; }
 
   .benefits__grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
   .scard { grid-template-columns: 1fr; gap: 26px; min-height: 0; }
@@ -603,6 +599,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 
 @media (max-width: 540px) {
   .container { padding-inline: 28px; }
+  .hero { padding-top: 28px; padding-bottom: 28px; }
   .hero__proof { gap: 24px; }
   .scard { width: calc(100% - 32px); margin-inline: 16px; padding: 28px 22px; }
   .hero__actions { width: 100%; }
