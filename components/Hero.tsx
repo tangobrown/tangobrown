@@ -1,5 +1,5 @@
 import Image from "next/image";
-import portrait from "@/public/tim-portrait.jpg";
+import portrait from "@/public/tim-portrait.png";
 
 export default function Hero() {
   return (
