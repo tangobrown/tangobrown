@@ -74,7 +74,7 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 
-.container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 28px; }
+.container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 44px; }
 
 .section { padding-block: clamp(76px, 8vw, 120px); position: relative; }
 
@@ -592,7 +592,7 @@ em { font-style: normal; color: var(--coral-deep); font-weight: 700; }
 }
 
 @media (max-width: 540px) {
-  .container { padding-inline: 20px; }
+  .container { padding-inline: 28px; }
   .hero__proof { gap: 24px; }
   .scard { width: calc(100% - 32px); margin-inline: 16px; padding: 28px 22px; }
   .hero__actions { width: 100%; }
