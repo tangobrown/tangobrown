@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Boldonse, Figtree } from "next/font/google";
+import { Boldonse, Public_Sans } from "next/font/google";
 import "./globals.css";
 
 const heading = Boldonse({
@@ -9,7 +9,7 @@ const heading = Boldonse({
   display: "swap",
 });
 
-const body = Figtree({
+const body = Public_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-body",
