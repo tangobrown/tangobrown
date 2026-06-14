@@ -12,7 +12,7 @@ type Service = {
 const services: Service[] = [
   {
     num: "01",
-    title: "Website builds",
+    title: "Website & App Builds",
     desc: "Bespoke, beautiful websites designed to convert visitors into customers — fast, responsive and built around your goals.",
     list: [
       "Custom design, no cookie-cutter templates",
